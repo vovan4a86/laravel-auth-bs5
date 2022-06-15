@@ -1,10 +1,10 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: true }" class="bg-white border-2">
     <!-- Primary Navigation Menu -->
     <div class="py-2 shadow">
         <div class="d-flex justify-content-between align-items-center mx-5">
                 <!-- Logo -->
                 <div class="d-flex flex-shrink-0 align-items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('home') }}">
                         <x-application-logo width=64 height=64 class="d-block mx-3 w-auto text-black-50" />
                     </a>
                 </div>
@@ -12,10 +12,10 @@
                 <!-- Navigation Links -->
                 <div class="d-none d-sm-flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        <h5>Dashboard</h5>
+                        Dashboard
                     </x-nav-link>
                     <x-nav-link :href="route('articles')" :active="request()->routeIs('articles')">
-                        <h5>Articles</h5>
+                        Articles
                     </x-nav-link>
                 </div>
 
@@ -39,9 +39,9 @@
             </div>
 
                 <!-- Hamburger -->
-            <div class="d-flex align-items-center d-sm-none">
-                <button @click="open = ! open" class="d-inline-flex align-items-center justify-content-center p-2 rounded-2 text-info">
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <div class="d-sm-none d-flex align-items-center">
+                <button @click="open = ! open" class="d-inline-flex align-items-center justify-content-center border-dark text-dark">
+                    <svg class="burger" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'d-none': open, 'd-inline-flex': ! open }" class="d-inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         <path :class="{'d-none': ! open, 'd-inline-flex': open }" class="d-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
@@ -54,7 +54,7 @@
     <div :class="{'d-block': open, 'd-none': ! open}" class="d-none d-sm-none">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                Dashboard
             </x-responsive-nav-link>
         </div>
 

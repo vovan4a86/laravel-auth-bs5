@@ -2,8 +2,8 @@
 
 @php
 $classes = ($active ?? false)
-            ? 'd-inline-flex align-items-center text-decoration-none px-1 pt-1 text-danger'
-            : 'd-inline-flex align-items-center px-1 pt-1 text-primary';
+            ? 'mx-2 btn btn-secondary'
+            : 'mx-2 btn btn-outline-secondary';
 @endphp
 
 <a {{ $attributes->merge(['class' => $classes]) }}>
