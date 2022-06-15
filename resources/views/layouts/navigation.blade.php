@@ -1,8 +1,7 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="py-2 shadow">
         <div class="d-flex justify-content-between align-items-center mx-5">
-            <div class="d-flex align-items-center">
                 <!-- Logo -->
                 <div class="d-flex flex-shrink-0 align-items-center">
                     <a href="{{ route('dashboard') }}">
@@ -13,10 +12,12 @@
                 <!-- Navigation Links -->
                 <div class="d-none d-sm-flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        <h5>Dashboard</h5>
+                    </x-nav-link>
+                    <x-nav-link :href="route('articles')" :active="request()->routeIs('articles')">
+                        <h5>Articles</h5>
                     </x-nav-link>
                 </div>
-            </div>
 
             <!-- Settings Dropdown -->
             <div class="dropdown">
@@ -30,7 +31,7 @@
                             <x-dropdown-link :href="route('logout')"
                                              onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                Log Out
                             </x-dropdown-link>
                         </form>
                     </li>

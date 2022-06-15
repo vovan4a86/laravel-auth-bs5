@@ -20,7 +20,7 @@
         }
     </style>
 </head>
-<body class="antialiased">
+<body>
 <div class="bg-dark">
     @if (Route::has('login'))
         <div class="px-6 py-4 d-flex justify-content-end">
